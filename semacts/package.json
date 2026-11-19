@@ -4,7 +4,7 @@
   "description": "",
   "main": "shexc-to-shexj",
   "scripts": {
-    "test": "node ./shexc-to-shexj < demo.shex 2>/dev/null | diff - demo.json"
+    "test": "node --no-warnings ./shexc-to-shexj < demo.shex | diff demo.json -"
   },
   "keywords": [],
   "author": "Eric Prud'hommeaux <eric.npm@w3.org> (http://www.w3.org/People/Eric/)",
