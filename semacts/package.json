@@ -10,8 +10,8 @@
   "author": "Eric Prud'hommeaux <eric.npm@w3.org> (http://www.w3.org/People/Eric/)",
   "license": "MIT",
   "dependencies": {
-    "antlr4": "4.8",
+    "antlr4": "4.13",
     "shex": "^1.0.0-alpha.33",
-    "shex-test": "^2.0.1"
+    "shex-test": "^2.1.0"
   }
 }
