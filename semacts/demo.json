@@ -1,0 +1,113 @@
+{
+  "type": "Schema",
+  "shapes": [
+    {
+      "type": "Shape",
+      "id": "http://a.example/foo/ns/p#a"
+    },
+    {
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "Shape",
+          "closed": true,
+          "extra": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://a.example/foo/p0",
+            "http://a.example/foo/p1"
+          ],
+          "expression": {
+            "type": "EachOf",
+            "expressions": [
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://a.example/foo/p0",
+                "valueExpr": {
+                  "type": "NodeConstraint",
+                  "values": [
+                    "http://a.example/foo/ns/p#a",
+                    {
+                      "value": "1",
+                      "type": "http://www.w3.org/2001/XMLSchema#integer"
+                    },
+                    {
+                      "type": "LanguageStemRange",
+                      "stem": "en",
+                      "exclusions": [
+                        {
+                          "type": "LanguageStem",
+                          "stem": "en-fr"
+                        }
+                      ]
+                    }
+                  ],
+                  "length": 1,
+                  "pattern": "^a$"
+                },
+                "annotations": [
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://a.example/foo/ns/p#se1",
+                    "object": {
+                      "value": "a"
+                    }
+                  }
+                ],
+                "semActs": [
+                  {
+                    "type": "SemAct",
+                    "name": "http://a.example/foo/ns/p#se",
+                    "code": "one"
+                  }
+                ]
+              },
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://a.example/foo/p1",
+                "valueExpr": {
+                  "type": "NodeConstraint",
+                  "datatype": "http://www.w3.org/2001/XMLSchema#float",
+                  "mininclusive": 1
+                },
+                "annotations": [
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://a.example/foo/ns/p#se2",
+                    "object": {
+                      "value": "b"
+                    }
+                  },
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://a.example/foo/ns/p#se3",
+                    "object": {
+                      "value": "c"
+                    }
+                  }
+                ],
+                "semActs": [
+                  {
+                    "type": "SemAct",
+                    "name": "http://a.example/foo/ns/p#se",
+                    "code": "two"
+                  },
+                  {
+                    "type": "SemAct",
+                    "name": "http://a.example/foo/ns/p#se",
+                    "code": "thr"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "NodeConstraint",
+          "nodeKind": "iri",
+          "pattern": "^http:"
+        }
+      ],
+      "id": "http://a.example/foo/ns/p#p"
+    }
+  ]
+}
